@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://service.lacaja.com.pe/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://service.lacaja.com.pe/">
+
+<xs:element name="getBeneficiario" type="tns:getBeneficiario"/>
+
+<xs:element name="getBeneficiarioResponse" type="tns:getBeneficiarioResponse"/>
+
+<xs:element name="getBoletas" type="tns:getBoletas"/>
+
+<xs:element name="getBoletasResponse" type="tns:getBoletasResponse"/>
+
+<xs:element name="getUsuarioPorNroDoc" type="tns:getUsuarioPorNroDoc"/>
+
+<xs:element name="getUsuarioPorNroDocResponse" type="tns:getUsuarioPorNroDocResponse"/>
+
+<xs:complexType name="getBeneficiario">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBeneficiarioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:beneficiario" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="beneficiario">
+<xs:sequence>
+<xs:element name="APENOM" type="xs:string" minOccurs="0"/>
+<xs:element name="CLPENSION" type="xs:string" minOccurs="0"/>
+<xs:element name="CODDOC" type="xs:string" minOccurs="0"/>
+<xs:element name="CODINST" type="xs:string" minOccurs="0"/>
+<xs:element name="CODPER" type="xs:string" minOccurs="0"/>
+<xs:element name="DOMICILIO" type="xs:string" minOccurs="0"/>
+<xs:element name="ESTADO" type="xs:string" minOccurs="0"/>
+<xs:element name="FECMOD" type="xs:string" minOccurs="0"/>
+<xs:element name="FECNAC" type="xs:string" minOccurs="0"/>
+<xs:element name="FECREG" type="xs:string" minOccurs="0"/>
+<xs:element name="NRODOC" type="xs:string" minOccurs="0"/>
+<xs:element name="NROSEC" type="xs:string" minOccurs="0"/>
+<xs:element name="PORCEN" type="xs:string" minOccurs="0"/>
+<xs:element name="POSTAL" type="xs:string" minOccurs="0"/>
+<xs:element name="SEXO" type="xs:string" minOccurs="0"/>
+<xs:element name="TIPOPER" type="xs:string" minOccurs="0"/>
+<xs:element name="USUMOD" type="xs:string" minOccurs="0"/>
+<xs:element name="USUREG" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUsuarioPorNroDoc">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUsuarioPorNroDocResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBoletas">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBoletasResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:boleta" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="boleta">
+<xs:sequence>
+<xs:element name="BANCO" type="xs:string" minOccurs="0"/>
+<xs:element name="CODCOND" type="xs:string" minOccurs="0"/>
+<xs:element name="CODDEP" type="xs:string" minOccurs="0"/>
+<xs:element name="CODGRADBAJ" type="xs:string" minOccurs="0"/>
+<xs:element name="CODGRADREM" type="xs:string" minOccurs="0"/>
+<xs:element name="CODINST" type="xs:string" minOccurs="0"/>
+<xs:element name="CODMOTB" type="xs:string" minOccurs="0"/>
+<xs:element name="CODPER" type="xs:string" minOccurs="0"/>
+<xs:element name="CODVAL" type="xs:string" minOccurs="0"/>
+<xs:element name="DESGRADBAJ" type="xs:string" minOccurs="0"/>
+<xs:element name="DESGRADREM" type="xs:string" minOccurs="0"/>
+<xs:element name="DESTIPOBEN" type="xs:string" minOccurs="0"/>
+<xs:element name="detalle" type="tns:boletaDetalle" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="DOMICILIO" type="xs:string" minOccurs="0"/>
+<xs:element name="FECGEN" type="xs:string" minOccurs="0"/>
+<xs:element name="FECMOD" type="xs:string" minOccurs="0"/>
+<xs:element name="FECREG" type="xs:string" minOccurs="0"/>
+<xs:element name="NROCUENTA" type="xs:string" minOccurs="0"/>
+<xs:element name="NRODOC" type="xs:string" minOccurs="0"/>
+<xs:element name="NROREP" type="xs:int"/>
+<xs:element name="PERANO" type="xs:int"/>
+<xs:element name="PERMES" type="xs:int"/>
+<xs:element name="PLANA" type="xs:string" minOccurs="0"/>
+<xs:element name="POSTAL" type="xs:string" minOccurs="0"/>
+<xs:element name="TIPDOC" type="xs:string" minOccurs="0"/>
+<xs:element name="TIPOBEN" type="xs:string" minOccurs="0"/>
+<xs:element name="TIPOPLA" type="xs:string" minOccurs="0"/>
+<xs:element name="TIPOPLANA" type="xs:string" minOccurs="0"/>
+<xs:element name="TOTDES" type="xs:double"/>
+<xs:element name="TOTREM" type="xs:double"/>
+<xs:element name="USUMOD" type="xs:string" minOccurs="0"/>
+<xs:element name="USUREG" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="boletaDetalle">
+<xs:sequence>
+<xs:element name="CONCEPTO" type="xs:string" minOccurs="0"/>
+<xs:element name="DESCRI" type="xs:string" minOccurs="0"/>
+<xs:element name="FECMOD" type="xs:string" minOccurs="0"/>
+<xs:element name="FECREG" type="xs:string" minOccurs="0"/>
+<xs:element name="IMPORTE" type="xs:double"/>
+<xs:element name="TIPOMOV" type="xs:string" minOccurs="0"/>
+<xs:element name="USUMOD" type="xs:string" minOccurs="0"/>
+<xs:element name="USUREG" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
