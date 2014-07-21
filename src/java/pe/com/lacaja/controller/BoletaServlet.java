@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.ws.WebServiceRef;
+import pe.com.lacaja.client.Beneficiario;
 import pe.com.lacaja.client.Boleta;
 import pe.com.lacaja.client.LaCajaServiceImplService;
 
@@ -67,10 +68,14 @@ public class BoletaServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-                String perCod = request.getParameter("vCodPer");
-                
+                String perCod = request.getParameter("vCodPer");                
                 List<Boleta> boleta = getBoletas(perCod);
                 request.setAttribute("boleta", boleta);
+                
+                String nroDoc = request.getParameter("hNroDoc");
+                List<Beneficiario> benef = getBeneficiario(nroDoc);
+                request.setAttribute("benef", benef);                                
+                
                 RequestDispatcher rd = getServletContext().getRequestDispatcher("/listadoBoletas.jsp");
                 rd.forward(request, response); 
     }
@@ -110,6 +115,13 @@ public class BoletaServlet extends HttpServlet {
         // If the calling of port operations may lead to race condition some synchronization is required.
         pe.com.lacaja.client.LaCajaService port = service.getLaCajaServiceImplPort();
         return port.getBoletas(arg0);
+    }
+    
+    private java.util.List<pe.com.lacaja.client.Beneficiario> getBeneficiario(java.lang.String arg0) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        pe.com.lacaja.client.LaCajaService port = service.getLaCajaServiceImplPort();
+        return port.getBeneficiario(arg0);
     }
 
 }

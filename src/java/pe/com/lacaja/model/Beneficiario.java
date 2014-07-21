@@ -6,6 +6,8 @@
 
 package pe.com.lacaja.model;
 
+import java.util.List;
+
 /**
  *
  * @author AlfredoRegis
@@ -30,6 +32,16 @@ public class Beneficiario {
     private String USUMOD;  //'Usuario de modificación',
     private String FECMOD;  //'Fecha de modificación'
 
+    private List<Opcion> opcUsu;
+
+    public List<Opcion> getOpcUsu() {
+        return opcUsu;
+    }
+
+    public void setOpcUsu(List<Opcion> opcUsu) {
+        this.opcUsu = opcUsu;
+    }
+    
     public String getCODINST() {
         return CODINST;
     }

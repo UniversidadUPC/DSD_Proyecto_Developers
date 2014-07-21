@@ -38,12 +38,22 @@
 <xs:element name="FECREG" type="xs:string" minOccurs="0"/>
 <xs:element name="NRODOC" type="xs:string" minOccurs="0"/>
 <xs:element name="NROSEC" type="xs:string" minOccurs="0"/>
+<xs:element name="opcUsu" type="tns:opcion" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
 <xs:element name="PORCEN" type="xs:string" minOccurs="0"/>
 <xs:element name="POSTAL" type="xs:string" minOccurs="0"/>
 <xs:element name="SEXO" type="xs:string" minOccurs="0"/>
 <xs:element name="TIPOPER" type="xs:string" minOccurs="0"/>
 <xs:element name="USUMOD" type="xs:string" minOccurs="0"/>
 <xs:element name="USUREG" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="opcion">
+<xs:sequence>
+<xs:element name="opcDes" type="xs:string" minOccurs="0"/>
+<xs:element name="opcEst" type="xs:string" minOccurs="0"/>
+<xs:element name="opcId" type="xs:int"/>
+<xs:element name="opcLnk" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -86,8 +96,8 @@
 <xs:element name="DESGRADBAJ" type="xs:string" minOccurs="0"/>
 <xs:element name="DESGRADREM" type="xs:string" minOccurs="0"/>
 <xs:element name="DESTIPOBEN" type="xs:string" minOccurs="0"/>
-<xs:element name="detalle" type="tns:boletaDetalle" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
 <xs:element name="DOMICILIO" type="xs:string" minOccurs="0"/>
+<xs:element name="detalle" type="tns:boletaDetalle" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
 <xs:element name="FECGEN" type="xs:string" minOccurs="0"/>
 <xs:element name="FECMOD" type="xs:string" minOccurs="0"/>
 <xs:element name="FECREG" type="xs:string" minOccurs="0"/>

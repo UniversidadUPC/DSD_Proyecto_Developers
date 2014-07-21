@@ -17,6 +17,7 @@ import pe.com.lacaja.connection.Conexion;
 import pe.com.lacaja.model.Beneficiario;
 import pe.com.lacaja.model.Boleta;
 import pe.com.lacaja.model.Boleta_Detalle;
+import pe.com.lacaja.model.Opcion;
 
 /**
  *
@@ -55,6 +56,7 @@ public class LaCajaServiceImpl implements LaCajaService{
     @Override
     public List<Beneficiario> getBeneficiario(String nroDoc) {
         List<Beneficiario> benef = new ArrayList<>();
+        List<Opcion> opc = new ArrayList<>();
         sql =   "select CODPER,APENOM, CODDOC, A.NRODOC, DOMICILIO \n" +
                 "from PENSIONWEB.PPE_T_BENEFICIARIO A \n" +
                 "inner join PENSIONWEB.PPE_T_USUARIO B on A.NroDoc = B.NroDoc\n" +
@@ -64,17 +66,32 @@ public class LaCajaServiceImpl implements LaCajaService{
             PreparedStatement pst=reg.prepareStatement(sql);
             pst.setString(1, nroDoc);            
             ResultSet n=pst.executeQuery();
-            //n.first();
             
-            while(n.next()){
-                Beneficiario benef1 = new Beneficiario();
+            Beneficiario benef1 = new Beneficiario();
+            while(n.next()){                
                 benef1.setCODPER(n.getString("CODPER"));
                 benef1.setAPENOM(n.getString("APENOM"));
                 benef1.setCODDOC(n.getString("CODDOC"));
                 benef1.setNRODOC(n.getString("NRODOC"));
-                benef1.setDOMICILIO(n.getString("DOMICILIO"));
-                benef.add(benef1);
+                benef1.setDOMICILIO(n.getString("DOMICILIO"));                
             }
+            //Carga Opciones de Usuario
+            sql = "select A.opcId, A.opcDes, A.opcLnk from PENSIONWEB.PPE_T_USU_OPC B\n" +
+                    "inner JOIN PENSIONWEB.PPE_T_OPCION A ON B.opcid = A.opcid\n" +
+                    "where A.opcest = 'A' and B.nrodoc = ?";
+            PreparedStatement pst1=reg.prepareStatement(sql);
+            pst1.setString(1, nroDoc);            
+            ResultSet n1=pst1.executeQuery();
+                        
+            while(n1.next()){                
+                Opcion opcion = new Opcion();
+                opcion.setOpcId(n1.getInt("opcId"));
+                opcion.setOpcDes(n1.getString("opcDes"));
+                opcion.setOpcLnk(n1.getString("opcLnk"));                
+                opc.add(opcion);
+            }
+            benef1.setOpcUsu(opc);
+            benef.add(benef1);
         } catch (Exception e) {
                 System.out.println("Error! "+e);                 
         }

@@ -5,7 +5,6 @@
  */
 
 package pe.com.lacaja.model;
-
 /**
  *
  * @author AlfredoRegis

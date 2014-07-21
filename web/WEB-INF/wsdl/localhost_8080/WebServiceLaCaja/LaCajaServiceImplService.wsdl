@@ -4,12 +4,6 @@
 <xsd:import namespace="http://service.lacaja.com.pe/" schemaLocation="http://localhost:8080/WebServiceLaCaja/LaCajaServiceImplService?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="getUsuarioPorNroDoc">
-<part name="parameters" element="tns:getUsuarioPorNroDoc"/>
-</message>
-<message name="getUsuarioPorNroDocResponse">
-<part name="parameters" element="tns:getUsuarioPorNroDocResponse"/>
-</message>
 <message name="getBoletas">
 <part name="parameters" element="tns:getBoletas"/>
 </message>
@@ -22,11 +16,13 @@
 <message name="getBeneficiarioResponse">
 <part name="parameters" element="tns:getBeneficiarioResponse"/>
 </message>
+<message name="getUsuarioPorNroDoc">
+<part name="parameters" element="tns:getUsuarioPorNroDoc"/>
+</message>
+<message name="getUsuarioPorNroDocResponse">
+<part name="parameters" element="tns:getUsuarioPorNroDocResponse"/>
+</message>
 <portType name="LaCajaService">
-<operation name="getUsuarioPorNroDoc">
-<input wsam:Action="http://service.lacaja.com.pe/LaCajaService/getUsuarioPorNroDocRequest" message="tns:getUsuarioPorNroDoc"/>
-<output wsam:Action="http://service.lacaja.com.pe/LaCajaService/getUsuarioPorNroDocResponse" message="tns:getUsuarioPorNroDocResponse"/>
-</operation>
 <operation name="getBoletas">
 <input wsam:Action="http://service.lacaja.com.pe/LaCajaService/getBoletasRequest" message="tns:getBoletas"/>
 <output wsam:Action="http://service.lacaja.com.pe/LaCajaService/getBoletasResponse" message="tns:getBoletasResponse"/>
@@ -35,18 +31,13 @@
 <input wsam:Action="http://service.lacaja.com.pe/LaCajaService/getBeneficiarioRequest" message="tns:getBeneficiario"/>
 <output wsam:Action="http://service.lacaja.com.pe/LaCajaService/getBeneficiarioResponse" message="tns:getBeneficiarioResponse"/>
 </operation>
+<operation name="getUsuarioPorNroDoc">
+<input wsam:Action="http://service.lacaja.com.pe/LaCajaService/getUsuarioPorNroDocRequest" message="tns:getUsuarioPorNroDoc"/>
+<output wsam:Action="http://service.lacaja.com.pe/LaCajaService/getUsuarioPorNroDocResponse" message="tns:getUsuarioPorNroDocResponse"/>
+</operation>
 </portType>
 <binding name="LaCajaServiceImplPortBinding" type="tns:LaCajaService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="getUsuarioPorNroDoc">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="getBoletas">
 <soap:operation soapAction=""/>
 <input>
@@ -57,6 +48,15 @@
 </output>
 </operation>
 <operation name="getBeneficiario">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getUsuarioPorNroDoc">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
