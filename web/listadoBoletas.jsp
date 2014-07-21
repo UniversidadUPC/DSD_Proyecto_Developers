@@ -500,12 +500,14 @@
                                                 </h1> 
                                                 <menu class="portlet-topper-toolbar" id="portlet-topper-toolbar_accesopensionistas_WAR_AccesoAplicacionesportlet" type="toolbar"> </menu> 
                                             </header> 
-                                            <div class="portlet-content"> 
+                                            <div class="portlet-content" style="overflow: hidden;"> 
                                                 <div class=" portlet-content-container" style=""> 
                                                     <div class="portlet-body"> 
                                                         <div style="height: 100%">                                                             
                                                             <table>
-                                                                <c:forEach items="${benef}" var="benef">                                                                    
+                                                                <c:forEach items="${benef}" var="benef"> 
+                                                                    <c:set var="vCodPer" scope="session" value="${benef.CODPER}"/>
+                                                                    <c:set var="vNroDoc" scope="session" value="${benef.NRODOC}"/>                                                                    
                                                                     <tr>
                                                                         <td>
                                                                             <div class="north" style="background-color:#31659C; left: 0px; top: 0px; width: 450px; height: 27px;">                                                            
@@ -525,7 +527,7 @@
                                                                 </c:forEach>
                                                             </table>
                                                             <br>
-                                                            <div id="menu" class="west" style="height: 227px; width: 160px; left: 0px; top: 32px; ">
+                                                            <div id="menu" class="west" style="height: 227px; width: 160px; float: left; top: 32px;">
                                                                 <div id="menuPrincipal" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
                                                                     <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-header-active ui-state-active ui-corner-top ui-accordion-icons" role="tab" id="ui-accordion-menuPrincipal-header-0" aria-controls="ui-accordion-menuPrincipal-panel-0" aria-selected="true" tabindex="0">
                                                                             <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span><a href="#">Opciones</a>
@@ -534,15 +536,16 @@
                                                                         <tbody>                                                                            
                                                                             <c:forEach items="${benef}" var="ben">  
                                                                                 <c:forEach items="${ben.opcUsu}" var="opc">
-                                                                                    <tr><td class="itemMenu" ><a href="${opc.opcLnk}?vCodPer=<c:out value="${vCodPer}"/>">${opc.opcDes}</td></tr>
+                                                                                    <tr><td class="itemMenu" ><a href="${opc.opcLnk}?vCodPer=<c:out value="${vCodPer}"/>&vNroDoc=<c:out value="${vNroDoc}"/>">${opc.opcDes}</td></tr>
                                                                                 </c:forEach>
                                                                             </c:forEach>
                                                                         </tbody>
                                                                     </table>
                                                                 </div>
                                                             </div>
-                                                            <div id="divPrincipalBienvenido" class="center" style="padding: 1em 2em; width: 733px; left: 170px; top: 32px; height: 205px;">
-                                                                <table border="1" align="center">
+                                                            <div id="pensionistaMain" style="width: 750px; float: left; top: 32px;">
+                                                                <table class="causanteRepresentanteTabla" style="width: 100%; border-collapse: collapse; font-size: 10px;">
+                                                                <!--<table border="1" align="center">-->
                                                                     <tr><td>Año Período</td><td>Mes Período</td><td>Fecha</td><td>Plana</td><td>Grado de Baja</td><td>Total Descuento</td><td>Total Remuneración</td></tr>
                                                                     <tr>
                                                                         <c:forEach items="${boleta}" var="boleta">
@@ -572,8 +575,8 @@
                                                                             </c:forEach>                                        
                                                                         </c:forEach>
 
-                                                                </table>
-                                                            </div>                                                            
+                                                                </table>                                                                
+                                                            </div>
                                                         </div> 
                                                     </div> 
                                                 </div> 

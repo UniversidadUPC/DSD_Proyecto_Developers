@@ -507,7 +507,7 @@
                                                             <table>
                                                                 <c:forEach items="${benef}" var="benef">
                                                                     <c:set var="vCodPer" scope="session" value="${benef.CODPER}"/>
-                                                                    <input type="hidden" name="hNroDoc" value="${benef.NRODOC}">
+                                                                    <c:set var="vNroDoc" scope="session" value="${benef.NRODOC}"/>
                                                                     <tr>
                                                                         <td>
                                                                             <div class="north" style="background-color:#31659C; left: 0px; top: 0px; width: 450px; height: 27px;">                                                            
@@ -536,7 +536,7 @@
                                                                         <tbody>                                                                            
                                                                             <c:forEach items="${benef}" var="ben">  
                                                                                 <c:forEach items="${ben.opcUsu}" var="opc">
-                                                                                    <tr><td class="itemMenu" ><a href="${opc.opcLnk}?vCodPer=<c:out value="${vCodPer}"/>">${opc.opcDes}</td></tr>
+                                                                                    <tr><td class="itemMenu" ><a href="${opc.opcLnk}?vCodPer=<c:out value="${vCodPer}"/>&vNroDoc=<c:out value="${vNroDoc}"/>">${opc.opcDes}</td></tr>
                                                                                 </c:forEach>
                                                                             </c:forEach>
                                                                         </tbody>

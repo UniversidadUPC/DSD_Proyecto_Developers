@@ -72,7 +72,7 @@ public class BoletaServlet extends HttpServlet {
                 List<Boleta> boleta = getBoletas(perCod);
                 request.setAttribute("boleta", boleta);
                 
-                String nroDoc = request.getParameter("hNroDoc");
+                String nroDoc = request.getParameter("vNroDoc");
                 List<Beneficiario> benef = getBeneficiario(nroDoc);
                 request.setAttribute("benef", benef);                                
                 
