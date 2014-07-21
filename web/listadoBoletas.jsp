@@ -541,8 +541,38 @@
                                                                     </table>
                                                                 </div>
                                                             </div>
-                                                            <div id="divPrincipalBienvenido" class="center" style="padding: 1em 2em; width: 733px; left: 170px; top: 32px; height: 205px; position: absolute;">
+                                                            <div id="divPrincipalBienvenido" class="center" style="padding: 1em 2em; width: 733px; left: 170px; top: 32px; height: 205px;">
+                                                                <table border="1" align="center">
+                                                                    <tr><td>Año Período</td><td>Mes Período</td><td>Fecha</td><td>Plana</td><td>Grado de Baja</td><td>Total Descuento</td><td>Total Remuneración</td></tr>
+                                                                    <tr>
+                                                                        <c:forEach items="${boleta}" var="boleta">
+                                                                            <td align="center">${boleta.PERANO}</td>
+                                                                            <td align="center">${boleta.PERMES}</td>
+                                                                            <td>${boleta.FECGEN}</td>
+                                                                            <td>${boleta.PLANA}</td>
+                                                                            <td>${boleta.DESGRADBAJ}</td>
+                                                                            <td align="right">${boleta.TOTREM}</td>
+                                                                            <td align="right">${boleta.TOTDES}</td>
+                                                                        </c:forEach>
+                                                                    </tr>                        
+                                                                </table> 
+                                                                <br><br>
+                                                                <table border="1" align="center">
+                                                                    <tr><td colspan="4"><b>Detalle:</b></td></tr>
+                                                                    <br>
+                                                                    <tr><td>Tipo de Movimiento</td><td>Cod.Concepto</td><td>Concepto</td><td>Total Remuneración</td></tr>            
+                                                                        <c:forEach var="cab" items="${boleta}">                                         
+                                                                            <c:forEach var="det" items="${cab.detalle}">
+                                                                                <tr>
+                                                                                <td align="center">${det.TIPOMOV}</td>
+                                                                                <td>${det.CONCEPTO}</td>
+                                                                                <td>${det.DESCRI}</td>
+                                                                                <td align="right">${det.IMPORTE}</td>  
+                                                                                </tr>
+                                                                            </c:forEach>                                        
+                                                                        </c:forEach>
 
+                                                                </table>
                                                             </div>                                                            
                                                         </div> 
                                                     </div> 
