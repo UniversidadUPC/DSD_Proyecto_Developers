@@ -10,6 +10,7 @@ import java.util.List;
 import javax.jws.WebService;
 import pe.com.lacaja.model.Beneficiario;
 import pe.com.lacaja.model.Boleta;
+import pe.com.lacaja.model.Consulta;
 
 /**
  *
@@ -24,4 +25,5 @@ public interface LaCajaService {
     
     List<Boleta> getBoletas(String CodPer);    
     
+    List<Consulta> getConsultas(String NroDoc);
 }

@@ -9,6 +9,7 @@
         <link href="/AccesoAplicaciones-portlet/css/main.css?browserId=other&amp;themeId=classic&amp;languageId=es_ES&amp;b=6101&amp;t=1403887200000" rel="stylesheet" type="text/css" /> 
         <link href="styles/jquery-ui-1.9.1.custom.css" rel="stylesheet" type="text/css" /> 
         <link href="styles/general.css" rel="stylesheet" type="text/css" /> 
+        <link href="styles/detallePensionistaBoleta.css" rel="stylesheet" type="text/css" /> 
         <script type="text/javascript">
             /*<![CDATA[*/
             var Liferay = {Browser: {acceptsGzip: function() {
@@ -543,38 +544,46 @@
                                                                     </table>
                                                                 </div>
                                                             </div>
-                                                            <div id="pensionistaMain" style="width: 750px; float: left; top: 32px;">
-                                                                <table class="causanteRepresentanteTabla" style="width: 100%; border-collapse: collapse; font-size: 10px;">
-                                                                <!--<table border="1" align="center">-->
-                                                                    <tr><td>Año Período</td><td>Mes Período</td><td>Fecha</td><td>Plana</td><td>Grado de Baja</td><td>Total Descuento</td><td>Total Remuneración</td></tr>
-                                                                    <tr>
-                                                                        <c:forEach items="${boleta}" var="boleta">
-                                                                            <td align="center">${boleta.PERANO}</td>
-                                                                            <td align="center">${boleta.PERMES}</td>
-                                                                            <td>${boleta.FECGEN}</td>
-                                                                            <td>${boleta.PLANA}</td>
-                                                                            <td>${boleta.DESGRADBAJ}</td>
-                                                                            <td align="right">${boleta.TOTREM}</td>
-                                                                            <td align="right">${boleta.TOTDES}</td>
-                                                                        </c:forEach>
-                                                                    </tr>                        
+                                                            <div id="pensionistaMain" style="width: 800px; float: left; top: 32px;">
+                                                                <table class="causanteRepresentanteTabla" style="width: 90%; border-collapse: collapse; font-size: 11px;background-color: white;" align="center">
+                                                                    <tbody>
+                                                                        <tr class="filaSuperiorCausanteRepresentante"><td>Año Período</td><td>Mes Período</td><td>Fecha</td><td>Plana</td><td>Grado de Baja</td><td>Total Descuento</td><td>Total Remuneración</td></tr>
+                                                                        <tr>
+                                                                            <c:forEach items="${boleta}" var="boleta">
+                                                                                <td align="center">${boleta.PERANO}</td>
+                                                                                <td align="center">${boleta.PERMES}</td>
+                                                                                <td>${boleta.FECGEN}</td>
+                                                                                <td>${boleta.PLANA}</td>
+                                                                                <td>${boleta.DESGRADBAJ}</td>
+                                                                                <td align="right">${boleta.TOTREM}</td>
+                                                                                <td align="right">${boleta.TOTDES}</td>
+                                                                            </c:forEach>
+                                                                        </tr>                        
+                                                                    </tbody>
                                                                 </table> 
                                                                 <br><br>
-                                                                <table border="1" align="center">
-                                                                    <tr><td colspan="4"><b>Detalle:</b></td></tr>
-                                                                    <br>
-                                                                    <tr><td>Tipo de Movimiento</td><td>Cod.Concepto</td><td>Concepto</td><td>Total Remuneración</td></tr>            
-                                                                        <c:forEach var="cab" items="${boleta}">                                         
-                                                                            <c:forEach var="det" items="${cab.detalle}">
-                                                                                <tr>
-                                                                                <td align="center">${det.TIPOMOV}</td>
-                                                                                <td>${det.CONCEPTO}</td>
-                                                                                <td>${det.DESCRI}</td>
-                                                                                <td align="right">${det.IMPORTE}</td>  
-                                                                                </tr>
-                                                                            </c:forEach>                                        
-                                                                        </c:forEach>
-
+                                                                <table class="descuentosTabla" style="width: 60%; border-collapse: collapse; font-size: 11px;background-color: white;" align="center">
+                                                                    <tbody>
+                                                                        <tr class="cabeceraDescuentos"><td colspan="2"><b>Detalle de Descuentos</b></td></tr>                                                                        
+                                                                            <tr>
+                                                                            <c:forEach var="cab" items="${boleta}">                                         
+                                                                                <c:forEach var="det" items="${cab.detalle}" varStatus="loop">
+                                                                                    <c:if test="${not loop.first and loop.index % 2 == 0}">
+                                                                                        </tr><tr>
+                                                                                    </c:if>                                                                                    
+                                                                                    <td>
+                                                                                        <table style="width: 100%;background-color: white;">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td style="border: none;">${det.DESCRI}</td>
+                                                                                                    <td style="border: none; padding-right: 5px; text-align: right;">${det.IMPORTE}</td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </c:forEach>                                        
+                                                                            </c:forEach>
+                                                                    </tbody>
                                                                 </table>                                                                
                                                             </div>
                                                         </div> 

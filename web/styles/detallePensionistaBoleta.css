@@ -1,0 +1,116 @@
+@CHARSET "ISO-8859-1";
+
+td{
+	padding-left: 5px;
+}
+
+table.tituloSuperiorTabla{
+    background-color: #73A0D2;
+    color: white;
+	
+}
+
+/**---------------------------------------------------**/
+
+table.datosBoletaTabla{
+	border-top: solid #73A0D2 1px;;
+	border-bottom: solid #73A0D2 1px;
+}
+
+.validador{
+	color: red;
+}
+
+/**---------------------------------------------------**/
+
+table.causanteRepresentanteTabla{
+	border: solid #73A0D2 1px;
+}
+
+table.causanteRepresentanteTabla tr td{
+	border-right: solid #73A0D2 1px;
+}
+
+tr.filaSuperiorCausanteRepresentante{
+	background-color: #73A0D2;
+    color: white;
+}
+
+/**---------------------------------------------------**/
+
+table.datosBeneficiariosTabla{
+	border: solid #73A0D2 1px;	
+}
+
+tr.filaSuperiorDatosBeneficiarios{
+	background-color: #73A0D2;
+    color: white;
+}
+
+/**---------------------------------------------------**/
+
+table.conceptosPensionariosTabla{
+	border: solid #73A0D2 1px;
+	empty-cells: show;
+	border-bottom: solid #73A0D2 1px;
+}
+
+table.conceptosPensionariosTabla tr td{
+	border-right: solid #73A0D2 1px;
+}
+
+tr.cabeceraPensiones{
+	
+	background-color: #73A0D2;
+    color: white;
+}
+
+div.subtotal{
+	border-top: solid #73A0D2 1px;
+	border-bottom: solid #73A0D2 1px;
+}
+
+/**---------------------------------------------------**/
+
+table.descuentosTabla{
+	border: solid #73A0D2 1px;
+	empty-cells: show;
+}
+
+table.descuentosTabla tr td{
+	border-right: solid #73A0D2 1px;
+}
+
+tr.cabeceraDescuentos{
+	
+	background-color: #73A0D2;
+    color: white;
+}
+
+/**---------------------------------------------------**/
+
+table.totalInferiorTabla{
+	border: solid #73A0D2 1px;
+	
+}
+
+tr.totalAPagar{
+	background-color: #B0C4DE;
+}
+
+/**---------------------------------------------------**/
+
+table.listaMensajes{
+	border-top: solid #73A0D2 1px;
+}
+
+/**PopUp confirmacion envio por correo*/
+
+div.mensajeEnvioBP{
+	color: #fd8c06;
+	font-weight: bold;
+}
+
+div.botonesEnvioBoleta{
+	text-align: center;
+}

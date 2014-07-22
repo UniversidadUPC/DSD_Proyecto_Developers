@@ -10,13 +10,17 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import javax.jws.WebService;
 import org.apache.taglibs.standard.functions.Functions;
 import pe.com.lacaja.connection.Conexion;
 import pe.com.lacaja.model.Beneficiario;
 import pe.com.lacaja.model.Boleta;
 import pe.com.lacaja.model.Boleta_Detalle;
+import pe.com.lacaja.model.Consulta;
+import pe.com.lacaja.model.Consulta_Respuesta;
 import pe.com.lacaja.model.Opcion;
 
 /**
@@ -147,6 +151,56 @@ public class LaCajaServiceImpl implements LaCajaService{
                 System.out.println("Error! "+e);                 
         }
         return boleta;
+    }
+
+    @Override
+    public List<Consulta> getConsultas(String NroDoc) {
+        List<Consulta> consulta = new ArrayList<>();
+        sql =   "select A.* from PENSIONWEB.ppe_t_consulta A\n" +
+                "Where A.NRODOC = ?";
+                
+        try {
+            PreparedStatement pst=reg.prepareStatement(sql);
+            pst.setString(1, NroDoc);            
+            ResultSet n=pst.executeQuery();            
+
+            while(n.next()){
+                Consulta consulta1 = new Consulta();
+                consulta1.setConId(n.getInt("conId"));
+                consulta1.setNroDoc(n.getString("nroDoc"));
+                consulta1.setConAsu(n.getString("conAsu"));
+                consulta1.setCondes(n.getString("conDes"));
+                consulta1.setConfch(n.getString("conFch"));
+                consulta1.setConest(n.getString("conEst"));
+                
+                //Agrega Respuestas
+                List<Consulta_Respuesta> respuesta = new ArrayList<>();
+                sql =   "select A.* from PENSIONWEB.ppe_t_consulta_rsp A\n" +
+                        "Where A.conId = ?";
+                
+                PreparedStatement pst1=reg.prepareStatement(sql);
+                pst1.setInt(1, consulta1.getConId());            
+                ResultSet n1=pst1.executeQuery();
+                while(n1.next()){
+                    Consulta_Respuesta rsp1 = new Consulta_Respuesta();
+                    rsp1.setConid(n1.getInt("conId"));
+                    rsp1.setRspconid(n1.getInt("rspConId"));
+                    rsp1.setRspcontip(n1.getString("rspConTip"));
+                    rsp1.setRspconusu(n1.getString("rspConUsu"));
+                    rsp1.setRspcondes(n1.getString("rspConDes"));
+                    rsp1.setRspconfch(n1.getString("rspConFch"));
+                    respuesta.add(rsp1);
+                }
+                //Agregamos el Detalle
+                consulta1.setConRsp(respuesta);
+                
+                //Agrega Boleta y Detalle
+                consulta.add(consulta1);
+            }
+        } catch (Exception e) {
+                System.out.println("Error! "+e);                 
+        }
+        return consulta;
     }
     
 }
