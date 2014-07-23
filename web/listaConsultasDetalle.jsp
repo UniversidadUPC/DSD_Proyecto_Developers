@@ -547,20 +547,41 @@
                                                             <div id="pensionistaMain" style="width: 800px; float: left; top: 32px;">
                                                                 <table class="causanteRepresentanteTabla" style="width: 90%; border-collapse: collapse; font-size: 11px;background-color: white;" align="center">
                                                                     <tbody>
-                                                                        <tr class="filaSuperiorCausanteRepresentante"><td colspan="6">Consultas:</td></tr>
-                                                                        <tr class="filaSuperiorCausanteRepresentante"><td>Nro.Consulta</td><td>Asunto</td><td>Descripción</td><td>Fecha</td><td>Estado</td><td></td></tr>
+                                                                        <tr class="filaSuperiorCausanteRepresentante"><td colspan="5">Consultas:</td></tr>
+                                                                        <tr class="filaSuperiorCausanteRepresentante"><td>Nro.Consulta</td><td>Asunto</td><td>Descripción</td><td>Fecha</td><td>Estado</td></tr>
                                                                         <tr>
                                                                             <c:forEach items="${consultas}" var="con">
                                                                                 <td align="center">${con.conId}</td>
                                                                                 <td>${con.conAsu}</td>
                                                                                 <td>${con.condes}</td>
                                                                                 <td>${con.confch}</td>
-                                                                                <td>${con.conest}</td>
-                                                                                <td><a href="ConsultaServlet?vCodPer=<c:out value="${vCodPer}"/>&vNroDoc=<c:out value="${vNroDoc}"/>&vConId=<c:out value="${con.conId}"/>">Ver</td>
+                                                                                <td>${con.conest}</td>                                                                                
                                                                             </c:forEach>
                                                                         </tr>                        
                                                                     </tbody>
-                                                                </table>                                                                                                                                 
+                                                                </table> 
+                                                                <br><br>
+                                                                <table class="descuentosTabla" style="width: 60%; border-collapse: collapse; font-size: 11px;background-color: white;" align="center">
+                                                                    <tbody>
+                                                                        <tr class="cabeceraDescuentos"><td colspan="5"><b>Respuestas</b></td></tr>
+                                                                        <tr class="cabeceraDescuentos"><td>Id</td><td>Tipo</td><td>Descripción</td><td>Usuario</td><td>Fecha</td></tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                            <c:forEach var="cab" items="${consultas}">                                         
+                                                                                <c:forEach var="det" items="${cab.conRsp}" varStatus="loop">
+                                                                                    <tr>
+                                                                                        <td style="border: none;">${det.rspconid}</td>
+                                                                                        <td style="border: none;">${det.rspcontip}</td>
+                                                                                        <td style="border: none;">${det.rspcondes}</td>
+                                                                                        <td style="border: none;">${det.rspconusu}</td>
+                                                                                        <td style="border: none;">${det.rspconfch}</td>
+                                                                                    </tr>                                                                                                                                                                                    
+                                                                                </c:forEach>                                        
+                                                                            </c:forEach>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>                                                                
                                                             </div>
                                                         </div> 
                                                     </div> 

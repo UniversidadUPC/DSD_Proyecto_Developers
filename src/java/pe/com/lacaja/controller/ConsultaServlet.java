@@ -73,9 +73,17 @@ public class ConsultaServlet extends HttpServlet {
                 request.setAttribute("benef", benef);                                
                         
                 List<Consulta> consultas = getConsultas(nroDoc);
-                request.setAttribute("consultas", consultas);                                
+                request.setAttribute("consultas", consultas);                  
                 
-                RequestDispatcher rd = getServletContext().getRequestDispatcher("/listaConsultas.jsp");
+                int ConId = 0;
+                try { ConId = Integer.parseInt(request.getParameter("vConId"));}catch(Exception e){}
+                
+                RequestDispatcher rd;
+                if (ConId == 0){
+                    rd = getServletContext().getRequestDispatcher("/listaConsultas.jsp");
+                }else{
+                    rd = getServletContext().getRequestDispatcher("/listaConsultasDetalle.jsp");
+                }
                 rd.forward(request, response);
     }
 

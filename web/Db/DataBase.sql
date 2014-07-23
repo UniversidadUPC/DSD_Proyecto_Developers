@@ -18,7 +18,7 @@ INSERT INTO `PENSIONWEB`.`PPE_T_USU_OPC` (`nrodoc`, `opcid`) VALUES ('22290581',
 INSERT INTO `PENSIONWEB`.`PPE_T_USU_OPC` (`nrodoc`, `opcid`) VALUES ('22290581', '2');
 
 
-CREATE TABLE `pensionweb`.`ppe_t_consulta` (
+CREATE TABLE `PENSIONWEB`.`PPE_T_CONSULTA` (
   `conId` INT(9) NOT NULL COMMENT 'Id de Consulta',
   `nrodoc` VARCHAR(10) NOT NULL,
   `conAsu` VARCHAR(50) NOT NULL COMMENT 'Asunto de Consulta',
@@ -28,11 +28,11 @@ CREATE TABLE `pensionweb`.`ppe_t_consulta` (
   PRIMARY KEY (`conId`))
 COMMENT = 'Consultas del Usuario';
 
-INSERT INTO `pensionweb`.`ppe_t_consulta` (`conId`, `nrodoc`, `conAsu`, `conDes`, `conFch`, `conEst`) 
+INSERT INTO `PENSIONWEB`.`PPE_T_CONSULTA` (`conId`, `nrodoc`, `conAsu`, `conDes`, `conFch`, `conEst`) 
 VALUES ('1', '10452832', 'Consulta Prueba 1', 'Descripción de Prueba para la Consulta 1', '2014-07-22', 'Enviada');
 
 
-CREATE TABLE `pensionweb`.`ppe_t_consulta_rsp` (
+CREATE TABLE `PENSIONWEB`.`PPE_T_CONSULTA_RSP` (
   `conId` INT(9) NOT NULL COMMENT 'Id de Consulta',
   `rspConId` INT(9) NOT NULL COMMENT 'Id Respuesta',
   `rspConTip` VARCHAR(15) NOT NULL COMMENT 'Tipo de Respuesta',
@@ -42,4 +42,4 @@ CREATE TABLE `pensionweb`.`ppe_t_consulta_rsp` (
   PRIMARY KEY (`conId`, `rspConId`))
 COMMENT = 'Respuesta de Consulta';
 
-INSERT INTO `pensionweb`.`ppe_t_consulta_rsp` (`conId`, `rspConId`, `rspConTip`, `rspConUsu`, `rspConDes`, `rspConFch`) VALUES ('1', '1', 'Respuesta', 'admin', 'Consulta Respondida', '2014-07-22');
+INSERT INTO `PENSIONWEB`.`PPE_T_CONSULTA_RSP` (`conId`, `rspConId`, `rspConTip`, `rspConUsu`, `rspConDes`, `rspConFch`) VALUES ('1', '1', 'Respuesta', 'admin', 'Consulta Respondida', '2014-07-22');
