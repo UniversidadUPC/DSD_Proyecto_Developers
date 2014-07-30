@@ -7,8 +7,8 @@
   </services>
   <clients>
     <client name="LaCajaServiceImplService">
-      <wsdl-url>http://localhost:8080/WebServiceLaCaja/LaCajaServiceImplService?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/WebServiceLaCaja/LaCajaServiceImplService.wsdl</local-wsdl-file>
+      <wsdl-url>http://ses121:8080/WebServiceLaCaja/LaCajaServiceImplService?WSDL</wsdl-url>
+      <local-wsdl-file>ses121_8080/WebServiceLaCaja/LaCajaServiceImplService.wsdl</local-wsdl-file>
       <package-name forceReplace="true">pe.com.lacaja.client</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
@@ -26,7 +26,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/WebServiceLaCaja/LaCajaServiceImplService?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://ses121:8080/WebServiceLaCaja/LaCajaServiceImplService?WSDL</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
