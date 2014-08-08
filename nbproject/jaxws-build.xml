@@ -45,8 +45,8 @@
     </target>
     <target name="wsimport-client-LaCajaServiceImplService" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/LaCajaServiceImplService"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/LaCajaServiceImplService" destdir="${build.generated.dir}/jax-wsCache/LaCajaServiceImplService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/LaCajaServiceImplService/wsdl/ses121_8080/WebServiceLaCaja/LaCajaServiceImplService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://ses121:8080/WebServiceLaCaja/LaCajaServiceImplService?WSDL" xnocompile="true" xendorsed="true" package="pe.com.lacaja.client">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/LaCajaServiceImplService/wsdl/ses121_8080/WebServiceLaCaja/LaCajaServiceImplService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/LaCajaServiceImplService" destdir="${build.generated.dir}/jax-wsCache/LaCajaServiceImplService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/LaCajaServiceImplService/wsdl/localhost_8080/WebServiceLaCaja/LaCajaServiceImplService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WebServiceLaCaja/LaCajaServiceImplService?wsdl" xnocompile="true" xendorsed="true" package="pe.com.lacaja.client">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/LaCajaServiceImplService/wsdl/localhost_8080/WebServiceLaCaja/LaCajaServiceImplService.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/LaCajaServiceImplService"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
