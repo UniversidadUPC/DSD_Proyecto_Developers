@@ -2,4 +2,6 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://localhost:8080/WebServiceLaCaja/LaCajaServiceImplService?wsdl" uri="wsdl/localhost_8080/WebServiceLaCaja/LaCajaServiceImplService.wsdl"/>
     <system systemId="http://localhost:8080/WebServiceLaCaja/LaCajaServiceImplService?xsd=1" uri="wsdl/localhost_8080/WebServiceLaCaja/LaCajaServiceImplService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/WebServiceLaCaja/LaCajaServiceImplService?WSDL" uri="wsdl/localhost_8080/WebServiceLaCaja/LaCajaServiceImplService.wsdl"/>
+    <system systemId="http://localhost:8080/WebServiceLaCaja/LaCajaServiceImplService?xsd=1" uri="wsdl/localhost_8080/WebServiceLaCaja/LaCajaServiceImplService.xsd_1.xsd"/>
 </catalog>

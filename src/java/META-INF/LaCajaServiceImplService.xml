@@ -4,17 +4,17 @@
 <xsd:import namespace="http://service.lacaja.com.pe/" schemaLocation="http://localhost:8080/WebServiceLaCaja/LaCajaServiceImplService?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="getBeneficiario">
+<part name="parameters" element="tns:getBeneficiario"/>
+</message>
+<message name="getBeneficiarioResponse">
+<part name="parameters" element="tns:getBeneficiarioResponse"/>
+</message>
 <message name="getUsuarioPorNroDoc">
 <part name="parameters" element="tns:getUsuarioPorNroDoc"/>
 </message>
 <message name="getUsuarioPorNroDocResponse">
 <part name="parameters" element="tns:getUsuarioPorNroDocResponse"/>
-</message>
-<message name="getConsultas">
-<part name="parameters" element="tns:getConsultas"/>
-</message>
-<message name="getConsultasResponse">
-<part name="parameters" element="tns:getConsultasResponse"/>
 </message>
 <message name="getBoletas">
 <part name="parameters" element="tns:getBoletas"/>
@@ -22,53 +22,33 @@
 <message name="getBoletasResponse">
 <part name="parameters" element="tns:getBoletasResponse"/>
 </message>
-<message name="getBeneficiario">
-<part name="parameters" element="tns:getBeneficiario"/>
+<message name="getConsultas">
+<part name="parameters" element="tns:getConsultas"/>
 </message>
-<message name="getBeneficiarioResponse">
-<part name="parameters" element="tns:getBeneficiarioResponse"/>
-</message>
-<message name="putConsultas">
-<part name="parameters" element="tns:putConsultas"/>
-</message>
-<message name="putConsultasResponse">
-<part name="parameters" element="tns:putConsultasResponse"/>
-</message>
-<message name="putConsultaRespuesta">
-<part name="parameters" element="tns:putConsultaRespuesta"/>
-</message>
-<message name="putConsultaRespuestaResponse">
-<part name="parameters" element="tns:putConsultaRespuestaResponse"/>
+<message name="getConsultasResponse">
+<part name="parameters" element="tns:getConsultasResponse"/>
 </message>
 <portType name="LaCajaService">
+<operation name="getBeneficiario">
+<input wsam:Action="http://service.lacaja.com.pe/LaCajaService/getBeneficiarioRequest" message="tns:getBeneficiario"/>
+<output wsam:Action="http://service.lacaja.com.pe/LaCajaService/getBeneficiarioResponse" message="tns:getBeneficiarioResponse"/>
+</operation>
 <operation name="getUsuarioPorNroDoc">
 <input wsam:Action="http://service.lacaja.com.pe/LaCajaService/getUsuarioPorNroDocRequest" message="tns:getUsuarioPorNroDoc"/>
 <output wsam:Action="http://service.lacaja.com.pe/LaCajaService/getUsuarioPorNroDocResponse" message="tns:getUsuarioPorNroDocResponse"/>
-</operation>
-<operation name="getConsultas">
-<input wsam:Action="http://service.lacaja.com.pe/LaCajaService/getConsultasRequest" message="tns:getConsultas"/>
-<output wsam:Action="http://service.lacaja.com.pe/LaCajaService/getConsultasResponse" message="tns:getConsultasResponse"/>
 </operation>
 <operation name="getBoletas">
 <input wsam:Action="http://service.lacaja.com.pe/LaCajaService/getBoletasRequest" message="tns:getBoletas"/>
 <output wsam:Action="http://service.lacaja.com.pe/LaCajaService/getBoletasResponse" message="tns:getBoletasResponse"/>
 </operation>
-<operation name="getBeneficiario">
-<input wsam:Action="http://service.lacaja.com.pe/LaCajaService/getBeneficiarioRequest" message="tns:getBeneficiario"/>
-<output wsam:Action="http://service.lacaja.com.pe/LaCajaService/getBeneficiarioResponse" message="tns:getBeneficiarioResponse"/>
-</operation>
-<operation name="putConsultas">
-<input wsam:Action="http://service.lacaja.com.pe/LaCajaService/putConsultasRequest" message="tns:putConsultas"/>
-<output wsam:Action="http://service.lacaja.com.pe/LaCajaService/putConsultasResponse" message="tns:putConsultasResponse"/>
-</operation>
-<operation name="putConsultaRespuesta">
-<input wsam:Action="http://service.lacaja.com.pe/LaCajaService/putConsultaRespuestaRequest" message="tns:putConsultaRespuesta"/>
-<output wsam:Action="http://service.lacaja.com.pe/LaCajaService/putConsultaRespuestaResponse" message="tns:putConsultaRespuestaResponse"/>
+<operation name="getConsultas">
+<input wsam:Action="http://service.lacaja.com.pe/LaCajaService/getConsultasRequest" message="tns:getConsultas"/>
+<output wsam:Action="http://service.lacaja.com.pe/LaCajaService/getConsultasResponse" message="tns:getConsultasResponse"/>
 </operation>
 </portType>
 <binding name="LaCajaServiceImplPortBinding" type="tns:LaCajaService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="getUsuarioPorNroDoc">
+<operation name="getBeneficiario">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -77,7 +57,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getConsultas">
+<operation name="getUsuarioPorNroDoc">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -95,25 +75,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getBeneficiario">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="putConsultas">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="putConsultaRespuesta">
+<operation name="getConsultas">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

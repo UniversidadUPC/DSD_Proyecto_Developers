@@ -16,14 +16,6 @@
 
 <xs:element name="getUsuarioPorNroDocResponse" type="tns:getUsuarioPorNroDocResponse"/>
 
-<xs:element name="putConsultaRespuesta" type="tns:putConsultaRespuesta"/>
-
-<xs:element name="putConsultaRespuestaResponse" type="tns:putConsultaRespuestaResponse"/>
-
-<xs:element name="putConsultas" type="tns:putConsultas"/>
-
-<xs:element name="putConsultasResponse" type="tns:putConsultasResponse"/>
-
 <xs:complexType name="getBeneficiario">
 <xs:sequence>
 <xs:element name="arg0" type="xs:string" minOccurs="0"/>
@@ -69,20 +61,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="putConsultas">
-<xs:sequence>
-<xs:element name="arg0" type="xs:string" minOccurs="0"/>
-<xs:element name="arg1" type="xs:string" minOccurs="0"/>
-<xs:element name="arg2" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="putConsultasResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="getUsuarioPorNroDoc">
 <xs:sequence>
 <xs:element name="arg0" type="xs:string" minOccurs="0"/>
@@ -91,20 +69,6 @@
 </xs:complexType>
 
 <xs:complexType name="getUsuarioPorNroDocResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="putConsultaRespuesta">
-<xs:sequence>
-<xs:element name="arg0" type="xs:int"/>
-<xs:element name="arg1" type="xs:string" minOccurs="0"/>
-<xs:element name="arg2" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="putConsultaRespuestaResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
 </xs:sequence>

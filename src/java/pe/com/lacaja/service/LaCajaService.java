@@ -26,4 +26,8 @@ public interface LaCajaService {
     List<Boleta> getBoletas(String CodPer);    
     
     List<Consulta> getConsultas(String NroDoc);
+    
+    boolean putConsultas(String nroDoc, String conAsu, String condes);
+    
+    boolean putConsultaRespuesta(int conId, String rspConDes, String nroDoc);
 }

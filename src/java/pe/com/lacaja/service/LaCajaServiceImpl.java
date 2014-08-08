@@ -9,10 +9,11 @@ package pe.com.lacaja.service;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.Date;
 import java.util.List;
-import java.util.Set;
 import javax.jws.WebService;
 import org.apache.taglibs.standard.functions.Functions;
 import pe.com.lacaja.connection.Conexion;
@@ -156,7 +157,7 @@ public class LaCajaServiceImpl implements LaCajaService{
     @Override
     public List<Consulta> getConsultas(String NroDoc) {
         List<Consulta> consulta = new ArrayList<>();
-        sql =   "select A.* from PENSIONWEB.ppe_t_consulta A\n" +
+        sql =   "select A.* from PENSIONWEB.PPE_T_CONSULTA A\n" +
                 "Where A.NRODOC = ?";
                 
         try {
@@ -175,7 +176,7 @@ public class LaCajaServiceImpl implements LaCajaService{
                 
                 //Agrega Respuestas
                 List<Consulta_Respuesta> respuesta = new ArrayList<>();
-                sql =   "select A.* from PENSIONWEB.ppe_t_consulta_rsp A\n" +
+                sql =   "select A.* from PENSIONWEB.PPE_T_CONSULTA_RSP A\n" +
                         "Where A.conId = ?";
                 
                 PreparedStatement pst1=reg.prepareStatement(sql);
@@ -202,5 +203,75 @@ public class LaCajaServiceImpl implements LaCajaService{
         }
         return consulta;
     }
-    
+
+    @Override
+    public boolean putConsultas(String nroDoc, String conAsu, String condes) {
+        boolean result = true;
+        sql =   "select max(conId)+1 from PENSIONWEB.PPE_T_CONSULTA";
+                
+        try {
+            PreparedStatement pst=reg.prepareStatement(sql);            
+            ResultSet n1=pst.executeQuery(sql);
+            int conId = 1;
+            while(n1.next()){                    
+                conId = n1.getInt(1);
+            }
+            sql =   "INSERT INTO PENSIONWEB.PPE_T_CONSULTA (conId, nrodoc, conAsu, \n"
+                    + "conDes, conFch, conEst) VALUES (?, ?, ?, ?, ?, ?)";
+            pst=reg.prepareStatement(sql);
+            pst.setInt(1, conId);
+            pst.setString(2, nroDoc);
+            pst.setString(3, conAsu);
+            pst.setString(4, condes);
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date date = new Date();            
+            pst.setString(5, dateFormat.format(date).toString());
+            pst.setString(6, "Enviada");
+            pst.executeUpdate();
+        } catch (Exception e) {                
+                System.out.println("Error! "+e); 
+                result = false;
+        }
+        return result;
+    }
+
+    @Override
+    public boolean putConsultaRespuesta(int conId, String rspConDes, String nroDoc) {
+        boolean result = true;
+        try {                        
+            sql =   "select max(rspConId)+1 from PENSIONWEB.PPE_T_CONSULTA_RSP \n" +
+                    "where conId = ?";
+            PreparedStatement pst=reg.prepareStatement(sql);            
+            pst.setInt(1, conId);
+            ResultSet n1=pst.executeQuery();
+            int rspConId = 1;
+            while(n1.next()){ 
+                if (n1.getInt(1) > 0){
+                    rspConId = n1.getInt(1);
+                }
+            }
+
+            sql =   "INSERT INTO PENSIONWEB.PPE_T_CONSULTA_RSP (conId, rspConId, rspConTip, rspConUsu, rspConDes, rspConFch) \n"
+                    + " VALUES (?, ?, ?, ?, ?, ?)";
+            pst=reg.prepareStatement(sql);
+            pst.setInt(1, conId);
+            pst.setInt(2, rspConId);
+            if (nroDoc == "admin"){
+                pst.setString(3, "Respuesta");
+                pst.setString(4, "admin");
+            }else{
+                pst.setString(3, "Repregunta");
+                pst.setString(4, nroDoc);
+            }
+            pst.setString(5, rspConDes);            
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date date = new Date();            
+            pst.setString(6, dateFormat.format(date).toString());            
+            pst.executeUpdate();
+        } catch (Exception e) {                
+                System.out.println("Error! "+e); 
+                result = false;
+        }
+        return result;
+    }
 }

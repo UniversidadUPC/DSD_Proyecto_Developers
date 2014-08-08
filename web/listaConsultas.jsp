@@ -1,15 +1,21 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html> 
-<html class="ltr" dir="ltr" lang="es-ES"> 
-    <head> 
-        <title>Pensionista - La Caja</title> 
-        <meta content="text/html; charset=UTF-8" http-equiv="content-type" /> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+        <title>Pensionista - La Caja</title>
+
+        <script src="js/jquery-2.1.1.js" type="text/javascript"></script>
+        <script language="javascript" type="text/javascript" src="js/popup.js"></script>
+
         <link href="http://www.lacaja.com.pe/html/themes/classic/images/favicon.ico" rel="Shortcut Icon" /> 
-        <link href="&#x2f;html&#x2f;css&#x2f;main&#x2e;css&#x3f;browserId&#x3d;other&#x26;themeId&#x3d;classic&#x26;languageId&#x3d;es_ES&#x26;b&#x3d;6101&#x26;t&#x3d;1333385984000" rel="stylesheet" type="text/css" /> 
-        <link href="/AccesoAplicaciones-portlet/css/main.css?browserId=other&amp;themeId=classic&amp;languageId=es_ES&amp;b=6101&amp;t=1403887200000" rel="stylesheet" type="text/css" /> 
         <link href="styles/jquery-ui-1.9.1.custom.css" rel="stylesheet" type="text/css" /> 
         <link href="styles/general.css" rel="stylesheet" type="text/css" /> 
         <link href="styles/detallePensionistaBoleta.css" rel="stylesheet" type="text/css" /> 
+        
+        <link href="styles/popup.css" rel="stylesheet" type="text/css">
+        
         <script type="text/javascript">
             /*<![CDATA[*/
             var Liferay = {Browser: {acceptsGzip: function() {
@@ -150,232 +156,13 @@
             Liferay.authToken = "fphsz34K";
             Liferay.currentURL = "\x2fweb\x2fguest\x2fpensionista";
             Liferay.currentURLEncoded = "%2Fweb%2Fguest%2Fpensionista";/*]]>*/
-        </script> 
-        <script src="/html/js/aui/yui/yui.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/arraylist-add/arraylist-add.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/arraylist-filter/arraylist-filter.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/arraylist/arraylist.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/array-extras/array-extras.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/array-invoke/array-invoke.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/attribute-base/attribute-base.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/attribute-complex/attribute-complex.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/base-base/base-base.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/base-pluginhost/base-pluginhost.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/classnamemanager/classnamemanager.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/datatype-xml-format/datatype-xml-format.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/datatype-xml-parse/datatype-xml-parse.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/dom-base/dom-base.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/dom-core/dom-core.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/dom-screen/dom-screen.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/dom-style/dom-style.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/event-base/event-base.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/event-custom-base/event-custom-base.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/event-custom-complex/event-custom-complex.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/event-delegate/event-delegate.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/event-focus/event-focus.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/event-hover/event-hover.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/event-key/event-key.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/event-mouseenter/event-mouseenter.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/event-mousewheel/event-mousewheel.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/event-outside/event-outside.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/event-resize/event-resize.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/event-simulate/event-simulate.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/event-synthetic/event-synthetic.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/intl/intl.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/io-base/io-base.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/io-form/io-form.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/io-queue/io-queue.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/io-upload-iframe/io-upload-iframe.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/io-xdr/io-xdr.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/json-parse/json-parse.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/json-stringify/json-stringify.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/node-base/node-base.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/node-core/node-core.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/node-event-delegate/node-event-delegate.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/node-event-simulate/node-event-simulate.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/node-focusmanager/node-focusmanager.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/node-pluginhost/node-pluginhost.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/node-screen/node-screen.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/node-style/node-style.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/oop/oop.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/plugin/plugin.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/pluginhost-base/pluginhost-base.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/pluginhost-config/pluginhost-config.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/querystring-stringify-simple/querystring-stringify-simple.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/queue-promote/queue-promote.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/selector-css2/selector-css2.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/selector-css3/selector-css3.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/selector-native/selector-native.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/selector/selector.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/widget-base/widget-base.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/widget-htmlparser/widget-htmlparser.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/widget-skin/widget-skin.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/widget-uievents/widget-uievents.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/yui-throttle/yui-throttle.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/aui-base/aui-base.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/aui-classnamemanager/aui-classnamemanager.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/aui-component/aui-component.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/aui-debounce/aui-debounce.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/aui-delayed-task/aui-delayed-task.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/aui-event/aui-event-base.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/aui-event/aui-event-input.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/aui-form-validator/aui-form-validator.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/aui-node/aui-node-base.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/aui-node/aui-node-html5-print.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/aui-node/aui-node-html5.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/aui-selector/aui-selector.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/aui-task-manager/aui-task-manager.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/liferay/modules.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/liferay/dependency.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/liferay/events.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/liferay/language.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/liferay/liferay.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/liferay/util.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/liferay/portal.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/liferay/portlet.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/liferay/portlet_sharing.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/liferay/workflow.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/liferay/form.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/liferay/form_placeholders.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/liferay/icon.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/liferay/menu.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/liferay/notice.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/liferay/poller.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/async-queue/async-queue.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/base-build/base-build.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/cookie/cookie.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/event-touch/event-touch.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/overlay/overlay.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/querystring-stringify/querystring-stringify.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/widget-child/widget-child.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/widget-position-align/widget-position-align.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/widget-position-constrain/widget-position-constrain.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/widget-position/widget-position.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/widget-stack/widget-stack.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/widget-stdmod/widget-stdmod.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/aui-aria/aui-aria.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/aui-io/aui-io-plugin.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/aui-io/aui-io-request.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/aui-loading-mask/aui-loading-mask.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/aui-overlay/aui-overlay-base.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/aui-overlay/aui-overlay-context.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/aui-overlay/aui-overlay-manager.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/aui-overlay/aui-overlay-mask.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/aui/aui-parse-content/aui-parse-content.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/liferay/address.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/liferay/dockbar.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/liferay/layout_configuration.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/liferay/layout_exporter.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/liferay/session.js?t=1361924259000" type="text/javascript"></script> 
-        <script src="/html/js/liferay/deprecated.js?t=1361924259000" type="text/javascript"></script> 
-        <script type="text/javascript">/*<![CDATA[*/Liferay.Portlet.list = ["accesopensionistas_WAR_AccesoAplicacionesportlet"];Liferay._editControlsState = "visible";/*]]>*/</script> 
-        <link class="lfr-css-file" href="http&#x3a;&#x2f;&#x2f;www&#x2e;lacaja&#x2e;com&#x2e;pe&#x2f;html&#x2f;themes&#x2f;classic&#x2f;css&#x2f;main&#x2e;css&#x3f;browserId&#x3d;other&#x26;themeId&#x3d;classic&#x26;languageId&#x3d;es_ES&#x26;b&#x3d;6101&#x26;t&#x3d;1380837678000" rel="stylesheet" type="text/css" /> 
-        <!-- <style type="text/css">
-            .portlet-title-text{cursor:default;font-size:.85em}
-            .portlet-document-library-display h1{font-size:1.2em;padding:5px}
-            .portlet-document-library-display 
-            .portlet-title-text{font-size:.85em}
-            .portlet-document-library-display 
-            .entry-title{padding:5px 0 0}
-            .portlet-document-library-display 
-            .entry-thumbnail 
-            .thumbnail{max-height:25px;max-width:25px}
-            .lfr-asset-column-details 
-            .lfr-asset-date{display:none}#_110_INSTANCE_1YEUCr7l24rO_objectsSearchContainerPageIteratorTop{display:none}
-            .portlet-document-library 
-            .asset-details 
-            .asset-details-content,
-            .portlet-document-library-display 
-            .asset-details 
-            .asset-details-content{display:none}
-            .lfr-message-info{display:none}
-            .portlet-document-library 
-            .context-pane 
-            .context-pane-content,
-            .portlet-document-library-display 
-            .context-pane 
-            .context-pane-content{display:none}
-            .portlet-msg-info,
-            .portlet-msg-help,
-            .lfr-message-help,
-            .portlet-msg-progress,
-            .lfr-message-progress,
-            .lfr-message-info{display:none}
-            .portlet-document-library 
-            .document-info 
-            .user-date,
-            .portlet-document-library 
-            .document-info 
-            .taglib-asset-tags-summary,
-            .portlet-document-library-display 
-            .document-info 
-            .user-date,
-            .portlet-document-library-display 
-            .document-info 
-            .taglib-asset-tags-summary{display:none}
-            .portlet-document-library 
-            .taglib-ratings
-            .stars 
-            .aui-rating-label-element,
-            .portlet-document-library-display 
-            .taglib-ratings
-            .stars 
-            .aui-rating-label-element{display:none}
-            .aui-rating-element{display:none}
-            .portlet-document-library 
-            .lfr-document-library-comments
-            .lfr-panel
-            .lfr-extended 
-            .lfr-panel-titlebar,
-            .portlet-document-library-display 
-            .lfr-document-library-comments
-            .lfr-panel
-            .lfr-extended 
-            .lfr-panel-titlebar{display:none}
-            .portlet-document-library 
-            .document-info,
-            .portlet-document-library-display 
-            .document-info{background:none repeat scroll 0 0 white}
-            .portlet-document-library 
-            .document-info,
-            .portlet-document-library-display 
-            .document-info{border-bottom:0}
-            .portlet-document-library 
-            .lfr-document-library-comments
-            .lfr-panel
-            .lfr-extended,
-            .portlet-document-library-display 
-            .lfr-document-library-comments
-            .lfr-panel
-            .lfr-extended{display:none}
-            .lfr-asset-column-details 
-            .lfr-asset-metadata{clear:both;margin-bottom:1
-            .5em;padding-bottom:1
-            .5em;display:none}
-            .portlet-title{border-radius:0;padding:5px;margin-left:-1px;margin-right:-1px;margin-top:-3px;border:medium none;color:#3972ad}
-            .portlet{background-color:#fff;border:1px solid #d4d6d8;border-radius:0;padding:4px}
-            .portlet-topper{border:medium none;border-radius:0;margin-left:-3px;margin-right:-2.6px;margin-top -3px}
-            .portlet a{text-decoration:none}table a{text-decoration:none}
-            .aui-searchcontainer-content a{font-size:12px;color:#030bd5}
-            .portlet-title{font-size:
-            .79em}#navigation li li a{font-size:11px;padding:4px 5px}#navigation 
-            .selected a,#navigation li
-            .hover a,#navigation a:hover,#navigation a:focus,#navigation 
-            .child-menu li a,#navigation.yui3-dd-dragging,
-            .lfr-navigation-proxy{text-shadow:0 -1px black}#navigation a{font-size:12
-            .5px;padding:7px 15px}#navigation ul{background:none repeat scroll 0 0 #247bbe}#navigation{margin-left:252px;margin-right:4px;resize:none}
-            .portlet-column-content-only,
-            .ltr 
-            .portlet-column-content-last,
-            .rtl 
-            .portlet-column-content-first{padding-left:0;padding-right:8px}
-            .aui-w1-4,
-            .aui-w25{padding-left:5px}
-            .portlet-column-content{padding:9px 4px 8px 4px}li a{font-size:10.5px}
-        </style> -->
+        </script>         
+        <!-- <script type="text/javascript">/*<![CDATA[*/Liferay.Portlet.list = ["accesopensionistas_WAR_AccesoAplicacionesportlet"];Liferay._editControlsState = "visible";/*]]>*/</script> -->
+        <link class="lfr-css-file" href="http&#x3a;&#x2f;&#x2f;www&#x2e;lacaja&#x2e;com&#x2e;pe&#x2f;html&#x2f;themes&#x2f;classic&#x2f;css&#x2f;main&#x2e;css&#x3f;browserId&#x3d;other&#x26;themeId&#x3d;classic&#x26;languageId&#x3d;es_ES&#x26;b&#x3d;6101&#x26;t&#x3d;1380837678000" rel="stylesheet" type="text/css" />         
         <style type="text/css"></style> 
-    </head> 
-    <body class="blue yui3-skin-sam controls-visible guest-site signed-in public-page site"> 
+    </head>
+
+    <body id="dt_example" class="blue yui3-skin-sam controls-visible guest-site signed-in public-page site">
         <div id="wrapper"> 
             <div id="topper" > 
                 <ul class="lfr-dock-list"> 
@@ -496,7 +283,7 @@
                                         <section class="portlet" id="portlet_accesopensionistas_WAR_AccesoAplicacionesportlet"> 
                                             <header class="portlet-topper"> 
                                                 <h1 class="portlet-title"> 
-                                                    <span > <img class="icon" id="rjus" src="/AccesoAplicaciones-portlet/icon.png" alt="" /> </span> 
+                                                    <!-- <span > <img class="icon" id="rjus" src="/AccesoAplicaciones-portlet/icon.png" alt="" /> </span> -->
                                                     <span class="portlet-title-text">Acceso Pensionistas</span> 
                                                 </h1> 
                                                 <menu class="portlet-topper-toolbar" id="portlet-topper-toolbar_accesopensionistas_WAR_AccesoAplicacionesportlet" type="toolbar"> </menu> 
@@ -531,7 +318,7 @@
                                                             <div id="menu" class="west" style="height: 227px; width: 160px; float: left; top: 32px;">
                                                                 <div id="menuPrincipal" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
                                                                     <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-accordion-header-active ui-state-active ui-corner-top ui-accordion-icons" role="tab" id="ui-accordion-menuPrincipal-header-0" aria-controls="ui-accordion-menuPrincipal-panel-0" aria-selected="true" tabindex="0">
-                                                                            <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span><a href="#">Opciones</a>
+                                                                            <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>Opciones<!--<a href="#"></a>-->
                                                                     </h3>
                                                                     <table style="border-collapse: collapse; width: 100%; display: table;" class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active" id="ui-accordion-menuPrincipal-panel-0" aria-labelledby="ui-accordion-menuPrincipal-header-0" role="tabpanel" aria-expanded="true" aria-hidden="false">
                                                                         <tbody>                                                                            
@@ -548,19 +335,54 @@
                                                                 <table class="causanteRepresentanteTabla" style="width: 90%; border-collapse: collapse; font-size: 11px;background-color: white;" align="center">
                                                                     <tbody>
                                                                         <tr class="filaSuperiorCausanteRepresentante"><td colspan="6">Consultas:</td></tr>
-                                                                        <tr class="filaSuperiorCausanteRepresentante"><td>Nro.Consulta</td><td>Asunto</td><td>Descripción</td><td>Fecha</td><td>Estado</td><td></td></tr>
-                                                                        <tr>
-                                                                            <c:forEach items="${consultas}" var="con">
+                                                                        <tr class="filaSuperiorCausanteRepresentante"><td>Nro.Consulta</td><td>Asunto</td><td>Descripción</td><td>Fecha</td><td>Estado</td><td></td></tr>                                                                        
+                                                                        <c:forEach items="${consultas}" var="con">
+                                                                            <tr>
                                                                                 <td align="center">${con.conId}</td>
                                                                                 <td>${con.conAsu}</td>
                                                                                 <td>${con.condes}</td>
                                                                                 <td>${con.confch}</td>
                                                                                 <td>${con.conest}</td>
-                                                                                <td><a href="ConsultaServlet?vCodPer=<c:out value="${vCodPer}"/>&vNroDoc=<c:out value="${vNroDoc}"/>&vConId=<c:out value="${con.conId}"/>">Ver</td>
-                                                                            </c:forEach>
-                                                                        </tr>                        
+                                                                                <c:choose>
+                                                                                    <c:when test="${con.conest=='Enviada'}">
+                                                                                        <td><a href="ConsultaServlet?vCodPer=<c:out value="${vCodPer}"/>&vNroDoc=<c:out value="${vNroDoc}"/>&vConId=<c:out value="${con.conId}"/>">Ver</td>
+                                                                                    </c:when>
+                                                                                    <c:otherwise>
+                                                                                        <td></td>
+                                                                                    </c:otherwise>
+                                                                              </c:choose>                                                                                
+                                                                            </tr>
+                                                                        </c:forEach>                                                                                                
                                                                     </tbody>
                                                                 </table>                                                                                                                                 
+                                                            </div>
+                                                            <div style="width: 150px;float: right; ">
+                                                                <div id="pop">
+                                                                    <div id="close">x</div>
+                                                                    <div id="contentPop">
+                                                                        <form action="ConsultaServlet" method="POST" class="aui-form ">
+                                                                            <table align="center">
+                                                                                <tr>
+                                                                                    <td>Asunto :</td>
+                                                                                    <td><input type="text" name="txtasunto"/></td>
+                                                                                </tr>
+                                                                                <br>
+                                                                                <tr>
+                                                                                    <td>Consulta :</td>
+                                                                                    <td><textarea name="txtconsulta" rows="5" cols="22"></textarea></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <input name="vNroDoc" type="hidden" value="<c:out value="${vNroDoc}"/>">
+                                                                                        <input name="vCodPer" type="hidden" value="<c:out value="${vCodPer}"/>">
+                                                                                    </td>
+                                                                                    <td align="right"><br><input type="submit" name="btnSubmit" value="Grabar"></td>                                                                                
+                                                                                </tr>
+                                                                            </table>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>                                                            
+                                                                <button onclick="show();">Nueva Consulta</button> 
                                                             </div>
                                                         </div> 
                                                     </div> 
@@ -572,7 +394,7 @@
                             </div> 
                         </div> 
                     </div> 
-                </div> 
+                </div>
                 <form action="#" id="hrefFm" method="post" name="hrefFm"> 
                     <span></span> 
                 </form> 
@@ -581,35 +403,6 @@
                 <p class="powered-by"> <p> </p> 
                 <div id="f_der"> UniversidadUPC DSD_Proyecto_Developers 2014</div> 
             </footer> 
-        </div> 
-    </body> 
-    <script src="/AccesoAplicaciones-portlet/js/main.js?browserId=other&amp;languageId=es_ES&amp;b=6101&amp;t=1403887200000" type="text/javascript"></script> 
-    <script type="text/javascript">/*<![CDATA[*/Liferay.Util.addInputFocus();Liferay.Portlet.runtimePortletIds = ["103"];/*]]>*/</script> 
-    <script type="text/javascript">
-        /*<![CDATA[*/
-        Liferay.Portlet.onLoad({canEditTitle: false, columnPos: 0, isStatic: "end", namespacedId: "p_p_id_103_", portletId: "103", refreshURL: "\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d2112372\x26p_p_id\x3d103\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3d\x26p_p_col_pos\x3d0\x26p_p_col_count\x3d0\x26p_p_isolated\x3d1\x26currentURL\x3d\x252Fweb\x252Fguest\x252Fpensionista"});
-        Liferay.Portlet.onLoad({canEditTitle: false, columnPos: 0, isStatic: "end", namespacedId: "p_p_id_accesopensionistas_WAR_AccesoAplicacionesportlet_", portletId: "accesopensionistas_WAR_AccesoAplicacionesportlet", refreshURL: "\x2fc\x2fportal\x2frender_portlet\x3fp_l_id\x3d2112372\x26p_p_id\x3daccesopensionistas_WAR_AccesoAplicacionesportlet\x26p_p_lifecycle\x3d0\x26p_t_lifecycle\x3d0\x26p_p_state\x3dnormal\x26p_p_mode\x3dview\x26p_p_col_id\x3dcolumn-1\x26p_p_col_pos\x3d0\x26p_p_col_count\x3d1\x26p_p_isolated\x3d1\x26currentURL\x3d\x252Fweb\x252Fguest\x252Fpensionista"});
-        AUI().use("aui-base", "liferay-menu", "liferay-notice", "liferay-poller", "liferay-session", function(a) {
-            (function() {
-                Liferay.Util.addInputType();
-                Liferay.Portlet.ready(function(b, c) {
-                    Liferay.Util.addInputType(c)
-                })
-            })();
-            (function() {
-                new Liferay.Menu();
-                var b = Liferay.Data.notices;
-                for (var c = 1; c < b.length; c++) {
-                    new Liferay.Notice(b[c])
-                }
-                Liferay.Poller.init({encryptedUserId: "+ojWOchjZxg/HjzPn9lx5Q==", supportsComet: false})
-            })();
-            (function() {
-                Liferay.Session = new Liferay.SessionBase({autoExtend: true, sessionLength: 30, redirectOnExpire: false, redirectUrl: "http://www.lacaja.com.pe/web/guest", warningLength: 1});
-                Liferay.Session.plug(Liferay.SessionDisplay)
-            })()
-        });/*]]>*/
-    </script> 
-    <script src="http://www.lacaja.com.pe/html/themes/classic/js/main.js?browserId=other&amp;languageId=es_ES&amp;b=6101&amp;t=1380837678000" type="text/javascript"></script> 
-    <script type="text/javascript"></script> 
-</html> 
+        </div>        
+    </body>
+</html>

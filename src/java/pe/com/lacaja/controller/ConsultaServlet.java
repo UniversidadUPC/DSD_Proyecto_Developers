@@ -67,7 +67,7 @@ public class ConsultaServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+                        
                 String nroDoc = request.getParameter("vNroDoc");
                 List<Beneficiario> benef = getBeneficiario(nroDoc);
                 request.setAttribute("benef", benef);                                
@@ -81,7 +81,9 @@ public class ConsultaServlet extends HttpServlet {
                 RequestDispatcher rd;
                 if (ConId == 0){
                     rd = getServletContext().getRequestDispatcher("/listaConsultas.jsp");
+                    //rd = getServletContext().getRequestDispatcher("/prueba.jsp");
                 }else{
+                    request.setAttribute("vConId", ConId);
                     rd = getServletContext().getRequestDispatcher("/listaConsultasDetalle.jsp");
                 }
                 rd.forward(request, response);
@@ -98,7 +100,25 @@ public class ConsultaServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+            int ConId = 0;
+            try { ConId = Integer.parseInt(request.getParameter("vConId"));}catch(Exception e){}
+
+            String nroDoc = request.getParameter("vNroDoc");
+            String vCodPer = request.getParameter("vCodPer");
+            
+            RequestDispatcher rd;
+            if (ConId == 0){                
+                String conAsu = request.getParameter("txtasunto");
+                String conDes = request.getParameter("txtconsulta");            
+                boolean tf = putConsultas(nroDoc,conAsu,conDes);
+            }else{
+                String rspConDet = request.getParameter("txtRespuesta");
+                boolean tf = putConsultaRespuesta(ConId,rspConDet,nroDoc);
+            }
+            request.setAttribute("vCodPer", vCodPer);
+            request.setAttribute("vNroDoc", nroDoc);
+            doGet(request, response);            
     }
 
     /**
@@ -123,5 +143,19 @@ public class ConsultaServlet extends HttpServlet {
         // If the calling of port operations may lead to race condition some synchronization is required.
         pe.com.lacaja.client.LaCajaService port = service.getLaCajaServiceImplPort();
         return port.getBeneficiario(arg0);
+    }
+
+    private boolean putConsultas(java.lang.String arg0, java.lang.String arg1, java.lang.String arg2) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        pe.com.lacaja.client.LaCajaService port = service.getLaCajaServiceImplPort();
+        return port.putConsultas(arg0, arg1, arg2);
+    }
+
+    private boolean putConsultaRespuesta(int arg0, java.lang.String arg1, java.lang.String arg2) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        pe.com.lacaja.client.LaCajaService port = service.getLaCajaServiceImplPort();
+        return port.putConsultaRespuesta(arg0, arg1, arg2);
     }
 }
